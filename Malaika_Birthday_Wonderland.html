@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4f8">
+<title>Malaika's Birthday Wonderland ♡</title>
+<style>
+:root{--pink:#f7b8d0;--rose:#bd668f;--deep:#77445f;--cream:#fff9fc;--lav:#e9e2ff;--gold:#f6d99a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--deep);font-family:Georgia,'Times New Roman',serif;background:linear-gradient(145deg,#fff8fb 0%,#f8f1ff 48%,#fff6f1 100%);min-height:100vh;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.spark{position:absolute;color:#e6a9c4;opacity:.6;animation:twinkle 3s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.18;transform:scale(.7) rotate(25deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@keyframes rise{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+.wrap{position:relative;z-index:1;width:min(920px,92%);margin:auto;padding:28px 0 70px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#b87999}
+.music{border:1px solid #edc9d9;background:#ffffffb8;color:var(--deep);padding:10px 14px;border-radius:30px;font-size:13px}
+.hero{text-align:center;padding:65px 12px 42px;animation:rise .9s ease both}
+.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;color:#b87999}
+h1{font-size:clamp(42px,8vw,76px);line-height:1.02;font-weight:normal;margin:18px 0 12px;color:#9d5d7d}
+.subtitle{font-size:18px;color:#a87591;line-height:1.7}
+.moon{font-size:54px;display:inline-block;animation:float 4s ease-in-out infinite}
+.btn{border:0;border-radius:40px;padding:14px 23px;background:linear-gradient(120deg,#eaa9c4,#d9c6f5);color:#633e58;box-shadow:0 8px 22px #dca8c533;transition:.2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px #dca8c555}
+.btn.secondary{background:#fff;border:1px solid #efd1df;box-shadow:none}
+.section{background:#ffffffb8;border:1px solid #f0dce7;border-radius:26px;padding:clamp(20px,4vw,34px);margin:22px 0;box-shadow:0 15px 45px #b98aa512;backdrop-filter:blur(8px);animation:rise .7s ease both}
+.section h2{text-align:center;font-size:clamp(27px,5vw,38px);font-weight:normal;color:#a25e80;margin:0 0 10px}
+.lead{text-align:center;color:#a77a91;line-height:1.7;margin:0 auto 22px;max-width:590px}
+.hidden{display:none!important}
+.quiz-progress{height:6px;background:#f6e6ee;border-radius:20px;overflow:hidden;margin:18px 0 24px}
+.quiz-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#e8a8c4,#c9b5ef);transition:width .35s}
+.qcount{text-align:center;font-size:12px;letter-spacing:2px;color:#b17a96;text-transform:uppercase}
+.question{text-align:center;font-size:23px;line-height:1.4;margin:12px 0 20px}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.answer{background:#fff;border:1px solid #efd6e2;border-radius:17px;padding:15px 12px;color:#80556d;min-height:62px;transition:.2s}
+.answer:hover{border-color:#d99bb8;background:#fff8fb;transform:translateY(-2px)}
+.answer:disabled{cursor:default;opacity:.75}
+.feedback{text-align:center;min-height:44px;padding:15px 4px 0;color:#ad6688;line-height:1.5}
+.result{text-align:center;padding:20px 8px;animation:pop .5s ease}
+.result .big{font-size:48px}
+.result h3{font-size:29px;font-weight:normal;color:#9d5d7d}
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:22px}
+.gift{border:1px solid #eed4e1;background:linear-gradient(150deg,#fff,#fff5fa);border-radius:20px;padding:18px 8px;min-height:150px;color:#9b6480;transition:.25s}
+.gift:hover{transform:translateY(-5px) rotate(-1deg)}
+.gift .emoji{font-size:42px;display:block;margin-bottom:12px;animation:float 3s ease-in-out infinite}
+.gift small{display:block;letter-spacing:1px}
+.gift-message{margin:18px auto 0;max-width:600px;min-height:62px;text-align:center;padding:18px;border-radius:17px;background:#fff7fb;color:#98627d;line-height:1.6}
+.cake-area{text-align:center;padding:15px 0 5px}
+.cake{position:relative;width:190px;height:150px;margin:24px auto 15px;cursor:pointer;filter:drop-shadow(0 10px 10px #c98eaa22);transition:.25s}
+.cake:hover{transform:scale(1.04)}
+.plate{position:absolute;bottom:0;left:0;width:190px;height:17px;border-radius:50%;background:#e8d6e8}
+.layer{position:absolute;left:17px;width:156px;height:53px;border-radius:13px 13px 8px 8px;background:#f1bfd2;bottom:13px;border-bottom:8px solid #e59bb9}
+.layer:before{content:"";position:absolute;top:0;left:0;right:0;height:13px;border-radius:13px;background:#fff0f6}
+.toplayer{position:absolute;left:30px;bottom:66px;width:130px;height:35px;border-radius:12px 12px 7px 7px;background:#f8dbe7;border-bottom:7px solid #e9a9c2}
+.candle{position:absolute;bottom:99px;left:91px;width:9px;height:30px;border-radius:4px;background:repeating-linear-gradient(45deg,#fff 0 5px,#c8b5ee 5px 9px)}
+.flame{position:absolute;bottom:128px;left:89px;width:13px;height:19px;background:#ffd783;border-radius:60% 40% 55% 45%;transform:rotate(4deg);box-shadow:0 0 20px #ffcf79;animation:sway .6s infinite}
+.flame.out{display:none}
+.cake-note{font-size:13px;color:#b07c96}
+.letter{max-width:700px;margin:20px auto 0;background:#fffafc;border:1px solid #f0dce7;border-radius:20px;padding:clamp(20px,4vw,36px);line-height:1.9;color:#80566d;white-space:normal}
+.letter p{margin:0 0 15px}
+.signature{text-align:right;color:#a65d83;font-size:20px;margin-top:20px}
+.footer{text-align:center;color:#bc91a7;font-size:12px;padding:32px 0 0;letter-spacing:1px}
+.confetti{position:fixed;top:-20px;z-index:10;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.2}}
+@media(max-width:560px){.hero{padding-top:48px}.answers{grid-template-columns:1fr}.gifts{gap:8px}.gift{min-height:130px;padding:14px 5px}.gift .emoji{font-size:35px}.topbar{align-items:flex-start}.brand{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">a little corner of the universe ♡</div>
+    <button class="music" id="musicBtn" type="button">♫ Play little melody</button>
+  </div>
+
+  <header class="hero" id="home">
+    <div class="moon">☾ ✧</div>
+    <div class="eyebrow">A tiny celebration for a very special girl</div>
+    <h1>Malaika's<br>Birthday Wonderland</h1>
+    <p class="subtitle">A little birthday adventure, made just for you.<br>Ready, princess? 🎀</p>
+    <button class="btn" onclick="document.getElementById('quizSection').scrollIntoView({behavior:'smooth'})">Enter my wonderland ♡</button>
+  </header>
+
+  <section class="section" id="quizSection">
+    <h2>First, let us lovingly expose you…</h2>
+    <p class="lead">A completely unserious investigation into your suspiciously sweet personality. Answer honestly. Your best friend is absolutely judging you. 😭</p>
+    <div id="quiz">
+      <div class="qcount" id="qcount">Question 1 of 6</div>
+      <div class="quiz-progress"><span id="progress"></span></div>
+      <div class="question" id="question"></div>
+      <div class="answers" id="answers"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+    </div>
+    <div class="result hidden" id="result">
+      <div class="big" id="resultEmoji">👑</div>
+      <h3 id="resultTitle">Certified Princess</h3>
+      <p id="resultText"></p>
+      <button class="btn secondary" onclick="restartQuiz()">Retake this very personal investigation ↻</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Three little mysteries 🎁</h2>
+    <p class="lead">Pick a gift. No peeking at all three at once. (I know you're tempted.)</p>
+    <div class="gifts">
+      <button class="gift" onclick="openGift(0)"><span class="emoji">🎀</span><small>GIFT NO. 01</small></button>
+      <button class="gift" onclick="openGift(1)"><span class="emoji">🌷</span><small>GIFT NO. 02</small></button>
+      <button class="gift" onclick="openGift(2)"><span class="emoji">💌</span><small>GIFT NO. 03</small></button>
+    </div>
+    <div class="gift-message" id="giftMessage" aria-live="polite">Your surprises are waiting here, birthday girl ♡</div>
+  </section>
+
+  <section class="section">
+    <h2>Make a birthday wish ✨</h2>
+    <p class="lead">The cake is ready. Tap it to blow out the candles and release a little birthday magic.</p>
+    <div class="cake-area">
+      <div class="cake" id="cake" role="button" tabindex="0" aria-label="Blow out the birthday candles" onclick="blowCandles()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();blowCandles()}">
+        <div class="plate"></div><div class="layer"></div><div class="toplayer"></div><div class="candle"></div><div class="flame" id="flame"></div>
+      </div>
+      <div class="cake-note" id="cakeNote">Tap the cake, make a wish, and don't tell anyone what it is 🤫</div>
+      <button class="btn secondary" style="margin-top:14px" onclick="relight()">Relight candles ♡</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>And now, something from me…</h2>
+    <p class="lead">No quiz, no tricks. Just a little reminder of how loved you are.</p>
+    <div class="letter">
+      <p>Happy Birthday to my sweetest, most lovely girl, Malaika! 🎂💗</p>
+      <p>You are honestly one of the most beautiful souls I have ever met ✨ You are so sweet, so innocent, so cute, and so sensitive, and that's what makes you so special 🥺💕 You feel everything so deeply and you love people so purely. Being around you feels soft and safe, like home 🏡💖 I am so lucky to have a friend like you who is this kind and this lovely 🫶</p>
+      <p>And can we talk about your voice, Malaika? 🎀 Your voice is so soft and sweet, but then you suddenly send the darkest reels with this same soft voice and personality and I just lose it every time 😭😂 That combination is so YOU and I love it so much.</p>
+      <p>I hope this year brings you endless happiness, soft days, loud laughs, and all the love you give to everyone else 🌸✨ Please never change, stay this cute, this sweet, and this funny.</p>
+      <p>Happy birthday my love, I love you so much! 🎉🎂💖</p>
+      <div class="signature">My princess 😌💋</div>
+    </div>
+  </section>
+  <div class="footer">MADE WITH LOVE, JUST FOR MALAIKA · ♡</div>
+</div>
+
+<script>
+const stars=['✧','♡','⋆','✦','❀'];
+for(let i=0;i<34;i++){const s=document.createElement('span');s.className='spark';s.textContent=stars[Math.floor(Math.random()*stars.length)];s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(10+Math.random()*18)+'px';s.style.animationDelay=(Math.random()*3)+'s';document.getElementById('sky').appendChild(s)}
+
+const questions=[
+ {q:"Malaika says, 'I am literally the most innocent person ever.' What should we do?",a:["Agree. No further questions. 🎀","Ask why her reels need a parental advisory 💀","Look directly into the camera like The Office","Save the statement as evidence for the trial 😭"],f:["The innocence is adorable. The evidence, however, is missing.","THANK YOU. Someone had to bring up the reel archive.","That camera look says everything.","Exhibit A: the sweetest voice delivering the most cursed content."]},
+ {q:"She sends a voice note that starts in the softest voice imaginable. You brace yourself because…",a:["She's probably asking how my day was 🌷","A wildly unhinged reel is about to be described 💀","The plot is about to take a turn nobody requested","I should probably put my phone down and prepare 😭"],f:["A rare peaceful episode. Enjoy it while it lasts.","The soft voice is merely the delivery system.","Malaika's plot twists deserve their own Netflix category.","Safety first. Keep your emotional seatbelt fastened."]},
+ {q:"Malaika gets caught being dramatic. Her defence?",a:["I am not dramatic, you are dramatic.","It's called having ✨feelings✨","I was just explaining something normally!","Changes the topic and sends a reel 😭"],f:["A classic legal defence. Very convincing. Not.","The sparkle emojis have entered the courtroom.","The witnesses respectfully disagree.","Deflection level: professional. Reel level: concerning."]},
+ {q:"You have 1% battery and Malaika sends 'WAIT LOOK AT THIS'. What do you do?",a:["Plug in immediately. This could be important.","Open it and accept my fate 💀","Ask if it is safe for public viewing","Screenshot the notification and emotionally prepare"],f:["Priorities. The charger can wait, apparently.","Brave. Reckless. A true friend.","There is no guarantee. You know this.","A sensible risk assessment before entering the chaos."]},
+ {q:"Malaika is being extra cute and knows she can get away with anything. Your response?",a:["Unfortunately, yes. She has privileges. 👑","Tell her to stop weaponising that cute face","Pretend to be strict for exactly 4 seconds","Give in immediately. I have no authority here 😭"],f:["Her royal highness has been granted diplomatic immunity.","A brave attempt. We support your journey.","Four seconds? That's actually impressive.","The kingdom has fallen. Long live Princess Malaika."]},
+ {q:"Choose the most accurate warning label for Malaika.",a:["Handle with care: very soft heart 💗","Sweet voice, suspicious content 💀","May cause uncontrollable laughing fits","Looks innocent. Do not trust the reels."],f:["A precious little human. Handle gently.","This should honestly be printed on her phone case.","Side effects include laughing at the worst possible time.","A warning label the public deserves to see."]}
+];
+let current=0,score=0,chaos=0;
+function renderQuestion(){
+ const q=questions[current];document.getElementById('qcount').textContent=`Question ${current+1} of ${questions.length}`;
+ document.getElementById('progress').style.width=(current/questions.length*100)+'%';
+ document.getElementById('question').textContent=q.q;
+ const box=document.getElementById('answers');box.innerHTML='';
+ document.getElementById('feedback').textContent='';
+ q.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=answer;b.onclick=()=>choose(i);box.appendChild(b)});
+}
+function choose(i){
+ const q=questions[current];score+=i;chaos += (i===1||i===3)?1:0;
+ [...document.querySelectorAll('.answer')].forEach(b=>b.disabled=true);
+ document.getElementById('feedback').textContent=q.f[i];
+ setTimeout(()=>{current++;if(current<questions.length)renderQuestion();else showResult()},1250);
+}
+function showResult(){
+ document.getElementById('quiz').classList.add('hidden');document.getElementById('result').classList.remove('hidden');
+ document.getElementById('progress').style.width='100%';
+ const titles=chaos>=4?['💀','The Sweet Voice Menace','A soft-spoken agent of chaos. The reels are questionable, the delivery is angelic, and the friendship is legally binding.']:score>=9?['👑','The Untouchable Princess','Cute, dramatic, and fully aware of her influence. The kingdom has no rules when you look that innocent.']:score>=5?['🎀','The Innocent-Looking Suspect','A sweetheart with a suspicious camera roll. We love you, but we are keeping an eye on those reels.']:['🌷','The Certified Softie','A whole marshmallow of a human. Still, we reserve the right to inspect your sent reels.'];
+ const r=titles;document.getElementById('resultEmoji').textContent=r[0];document.getElementById('resultTitle').textContent=r[1];document.getElementById('resultText').textContent=r[2];confetti(45);
+}
+function restartQuiz(){current=0;score=0;chaos=0;document.getElementById('quiz').classList.remove('hidden');document.getElementById('result').classList.add('hidden');renderQuestion()}
+renderQuestion();
+
+const gifts=[
+ "A reminder: you make ordinary days feel softer just by being in them. Keep that lovely heart of yours. 🌷",
+ "Official certificate: World's Sweetest Voice With The Most Unexpected Reel Recommendations. Awarded to Malaika. 😭🏆",
+ "Your birthday wish from me: may life be gentle with you, may your laugh stay loud, and may you always feel as loved as you make others feel. 💌"
+];
+function openGift(i){document.getElementById('giftMessage').textContent=gifts[i];confetti(18)}
+function blowCandles(){const f=document.getElementById('flame');if(f.classList.contains('out'))return;f.classList.add('out');document.getElementById('cakeNote').textContent="WISH SENT TO THE UNIVERSE ✨ Happy birthday, princess!";confetti(90)}
+function relight(){document.getElementById('flame').classList.remove('out');document.getElementById('cakeNote').textContent="Tap the cake, make a wish, and don't tell anyone what it is 🤫"}
+function confetti(n){const bits=['✦','♡','✿','·','🎀'];for(let i=0;i<n;i++){const e=document.createElement('div');e.className='confetti';e.textContent=bits[Math.floor(Math.random()*bits.length)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(12+Math.random()*17)+'px';e.style.animationDuration=(2.5+Math.random()*2.5)+'s';e.style.color=['#e8a6c2','#c8b5ed','#e8ca91','#d69bb8'][Math.floor(Math.random()*4)];document.body.appendChild(e);setTimeout(()=>e.remove(),5200)}}
+
+let audioCtx=null,osc=null,gain=null,melodyTimer=null,musicOn=false;
+const musicBtn=document.getElementById('musicBtn');
+function toggleMusic(){
+ if(musicOn){musicOn=false;if(melodyTimer)clearInterval(melodyTimer);if(gain)gain.gain.setTargetAtTime(0,audioCtx.currentTime,.15);musicBtn.textContent='♫ Play little melody';return}
+ const AC=window.AudioContext||window.webkitAudioContext;if(!AC){musicBtn.textContent='Music not supported here';return}
+ audioCtx=audioCtx||new AC();audioCtx.resume();musicOn=true;musicBtn.textContent='♫ Pause little melody';
+ const notes=[523.25,659.25,783.99,659.25,587.33,698.46,783.99,1046.5];let idx=0;
+ function note(){if(!musicOn)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=notes[idx++%notes.length];g.gain.setValueAtTime(.0001,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.055,audioCtx.currentTime+.04);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.48);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.5)}
+ note();melodyTimer=setInterval(note,520);
+}
+musicBtn.addEventListener('click',toggleMusic);
+</script>
+</body>
+</html>
